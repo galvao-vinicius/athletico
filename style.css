@@ -1,0 +1,301 @@
+/* CSS - Stylization do Athletico Paranaense */
+
+/* Cores oficiais */
+:root {
+    --vermelho: #d30f1c;
+    --preto: #1a1a1a;
+    --branco: #ffffff;
+    --cinza: #f5f5f5;
+    --dourado: #ffcc00;
+}
+
+/* Modo escuro */
+.modo-escuro {
+    --vermelho: #ff3333;
+    --preto: #0a0a0a;
+    --cinza: #1a1a1a;
+    --branco: #e0e0e0;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cinza);
+    color: var(--preto);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, var(--vermelho), var(--preto));
+    color: var(--branco);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover, .menu a.ativo {
+    background: var(--branco);
+    color: var(--vermelho);
+}
+
+/* Botão modo escuro */
+.botao-modo {
+    background: var(--preto);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.botao-modo:hover {
+    background: var(--dourado);
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(135deg, var(--vermelho) 50%, var(--preto) 50%);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+}
+
+.escudo-animado {
+    font-size: 80px;
+    animation: girarBola 3s infinite linear;
+}
+
+@keyframes girarBola {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.banner h2 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.banner .anos {
+    font-size: 24px;
+    opacity: 0.8;
+}
+
+/* Seções */
+.pagina {
+    padding: 60px 0;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pagina h2 {
+    color: var(--vermelho);
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border-left: 4px solid var(--vermelho);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.card span {
+    font-size: 40px;
+}
+
+.card h3 {
+    color: var(--vermelho);
+    margin: 15px 0;
+}
+
+/* Blocos de conteúdo */
+.conteudo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.bloco, .titulo-bloco {
+    background: var(--branco);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.bloco:hover, .titulo-bloco:hover {
+    transform: scale(1.02);
+}
+
+.bloco h3, .titulo-bloco h3 {
+    color: var(--vermelho);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--vermelho);
+    padding-bottom: 10px;
+}
+
+.escalacao {
+    background: var(--preto);
+    color: var(--branco);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-family: monospace;
+}
+
+/* Galeria */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    background: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.galeria-item h4 {
+    padding: 15px;
+    color: var(--vermelho);
+    text-align: center;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    animation: fadeIn 0.3s;
+}
+
+.modal-conteudo {
+    background: var(--branco);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+}
+
+.fechar {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 40px;
+    cursor: pointer;
+    color: var(--vermelho);
+}
+
+.modal-conteudo img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+.formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(
